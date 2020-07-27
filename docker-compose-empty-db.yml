@@ -10,9 +10,9 @@ services:
      POSTGRES_DB_TARGET: dhis-target
      PG_DATA: /var/lib/postgresql/data/pgdata:z
    ports:
-    - "5432:5432"
+    - "5435:5432"
    healthcheck:
-     test: ["CMD-SHELL", "pg_isready -h database -p 5432 -d dhis2"]
+     test: ["CMD-SHELL", "pg_isready -h database -p 5435 -d dhis2"]
      interval: 30s
      timeout: 30s
      retries: 150
@@ -23,7 +23,7 @@ services:
      JAVA_OPTS: "-Xmx1024m -Xms4000m"
      POSTGRES_DB: dhis
    ports:
-     - "8085:8080"
+     - "8095:8080"
    depends_on:
      database:
        condition: service_healthy
