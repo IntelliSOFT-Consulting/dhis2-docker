@@ -18,7 +18,7 @@ services:
      retries: 150
  web:
    container_name: dhis2-web
-   image: dhis2/dhis2-web:2.30-tomcat7-jre8-latest
+   image: dhis2/core:2.33.0
    environment:
      JAVA_OPTS: "-Xmx1024m -Xms4000m"
      POSTGRES_DB: dhis
